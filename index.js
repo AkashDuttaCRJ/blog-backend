@@ -27,6 +27,10 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
+app.get("/keep-alive", (req, res) => {
+  return res.status(200).json({ message: "Success" });
+});
+
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/post");
 
